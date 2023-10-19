@@ -1,0 +1,18 @@
+﻿@model List<Album>
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+
+<ul>
+@foreach (Album album in Model) {
+    <li>
+        @album.Title
+        <ul>
+        @foreach (Track track in album.Tracks) {
+            <li>@track.TrackInfo</li>
+        }
+        </ul>
+    </li>
+}
+</ul>
